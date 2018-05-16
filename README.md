@@ -10,25 +10,27 @@ Libraries used on the sample project
 * [junit, mockito](http://mockito.org/)
 
 # Demo
-![](https://lh3.googleusercontent.com/ofM_n7E4mUVhNQArR7MLkiotSg1da7-THjmJuU58TukYZB-ad13HRpJmS53czLBJF-4qX7kMfz6zEcIuPoi2AUFY1svoZ_4UmLxMCZF35ZXahrrOJVir7le5K8rnNqddC-4jozP-7GFHT7m2xIj4pPOLjZIKzJW-k348YgNATv2cVYiiEvJKS3_nbgKDQ8YkNfWuph0Ls2LVD6ECSMJJU_tBgIzxax1zBEECN5cElcMXY1DigfzjaMpmNzs13YyUg7lQFTSvgkiqCYz7Vym-NUXdu7jUX1mqSCbMA79DxzJT9LQ4wiZ1z8__P02xBTBEHsj9uASQTbIF2yedAXhgsSU-E7x41c4BxLH_clP6k-7to1Yi8YRqmiRvV9yBQopBvSYlIGfDQVu7Rg-VRmo2MTdUdhb7c5ljxf7jTfrUSczJShOWw8R88NTr7uRTEfaya6E5LzIH_YQL6BTZLw5YYtB3XY_t5gXN3LfsKS4Lo2N4A6G7b52SDmJIc0sP1MZ7KsGNGQs5FQ5xpEDDx9ZnwQaqjA49HPPuVmVuPRL31Sllcov2LjPfE0UPO8QcCIa4XMOQHlQv=w2880-h1652-k)
+![]
 
-Do you want to contribute?
+Helps you:
 --------------------------
+# keeping track of bills
+#keeping track of your money
 
 Great for roommates, poker nights, fantasy football, or anything else you can think of. Don't struggle to remember, use Get You Later!
 The app sets up a tab(like a bar tab) for each of your contacts. If you loan a friend some cash, you put it on their tab.
 When your friend pays you back, take it off the tab. Simple.
 
-** Use Get You Later when you:
+Use GetYouLater when you:
 * - spot a friend cash - make a friendly wager
 * - buy tickets for the group
 * - 'go in' on a present
 * - setup your fantasy football league
 * - poker night ...or anything else you can think of!
 
-** Privacy: Get You Later, LLC does not see, collect or store any of your contact information or transaction information.
+Privacy: Get You Later, LLC does not see, collect or store any of your contact information or transaction information.
 
-#Developed By
+Developed By
 ------------
 
 * ZaiMongMot  - <zaimongmot@gmail.com>
