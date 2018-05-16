@@ -1,11 +1,5 @@
-# People-MVVM [![Build Status](https://travis-ci.org/erikcaffrey/People-MVVM.svg?branch=master)](https://travis-ci.org/erikcaffrey/People-MVVM)
+# GetYouLater [![Build Status](https://travis-ci.org/ZaiMongMot/GetYouLater.svg?branch=master)](https://travis-ci.org/ZaiMongMot/GetYouLater)
 Example android Model View View Model and DataBinding used to explain how to use this pattern in our android applications.
-
-This example was created to support an article explanation [Escribiendo android apps con Data Binding](https://erikcaffrey.github.io/ANDROID-databinding-android/) (spanish)
-and also it was created for a talk **MVVM-android** [Meetup Androidinights](http://www.meetup.com/es/Androidinights/) by GDG Androidtitlan Mexico City March 2016. 
-
-**Slides** [My android Talk](https://speakerdeck.com/erikcaffrey/mvvm-android).
-
 
 Libraries used on the sample project
 ------------------------------------
@@ -21,17 +15,28 @@ Libraries used on the sample project
 Do you want to contribute?
 --------------------------
 
-Feel free to report or add any useful feature, I will be glad to improve it with your help, before submitting your code please check the [codestyle](https://github.com/square/java-code-styles).
+Great for roommates, poker nights, fantasy football, or anything else you can think of. Don't struggle to remember, use Get You Later!
+The app sets up a tab(like a bar tab) for each of your contacts. If you loan a friend some cash, you put it on their tab.
+When your friend pays you back, take it off the tab. Simple.
 
-Developed By
+** Use Get You Later when you:
+* - spot a friend cash - make a friendly wager
+* - buy tickets for the group
+* - 'go in' on a present
+* - setup your fantasy football league
+* - poker night ...or anything else you can think of!
+
+** Privacy: Get You Later, LLC does not see, collect or store any of your contact information or transaction information.
+
+#Developed By
 ------------
 
-* Erik Jhordan Rey  - <erikjhordan.rey@gmail.com> 
+* ZaiMongMot  - <zaimongmot@gmail.com>
 
 License
 -------
 
-    Copyright 2016 Erik Jhordan Rey
+    Copyright 2016 ZaiMongMot
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
