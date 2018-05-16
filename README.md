@@ -14,19 +14,21 @@ Libraries used on the sample project
 
 Helps you:
 --------------------------
-# keeping track of bills
-#keeping track of your money
+* keeping track of bills
+* keeping track of your money
 
 Great for roommates, poker nights, fantasy football, or anything else you can think of. Don't struggle to remember, use Get You Later!
 The app sets up a tab(like a bar tab) for each of your contacts. If you loan a friend some cash, you put it on their tab.
 When your friend pays you back, take it off the tab. Simple.
 
 Use GetYouLater when you:
-* - spot a friend cash - make a friendly wager
-* - buy tickets for the group
-* - 'go in' on a present
-* - setup your fantasy football league
-* - poker night ...or anything else you can think of!
+-----------------------
+- spot a friend cash
+- make a friendly wager
+- buy tickets for the group
+- 'go in' on a present
+- setup your fantasy football league
+- poker night ...or anything else you can think of!
 
 Privacy: Get You Later, LLC does not see, collect or store any of your contact information or transaction information.
 
