@@ -21,7 +21,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.jspham.getyoulater.android.model.People;
+import com.jspham.getyoulater.android.data.model.People;
 
 public class PeopleDetailViewModel {
 
@@ -32,13 +32,13 @@ public class PeopleDetailViewModel {
   }
 
   public String getFullUserName() {
-    people.fullName = people.name.title + "." + people.name.firts + " " + people.name.last;
+//    people.fullName = people.name.title + "." + people.name.firts + " " + people.name.last;
     return people.fullName;
   }
 
-  public String getUserName() {
-    return people.userName.userName;
-  }
+//  public String getUserName() {
+//    return people.userName.userName;
+//  }
 
   public String getEmail() {
     return people.mail;
@@ -52,17 +52,17 @@ public class PeopleDetailViewModel {
     return people.cell;
   }
 
-  public String getPictureProfile() {
-    return people.picture.large;
-  }
+//  public String getPictureProfile() {
+//    return people.picture.large;
+//  }
 
-  public String getAddress() {
-    return people.location.street
-        + " "
-        + people.location.city
-        + " "
-        + people.location.state;
-  }
+    //  public String getAddress() {
+    //    return people.location.street
+    //        + " "
+    //        + people.location.city
+    //        + " "
+    //        + people.location.state;
+    //  }
 
   public String getGender() {
     return people.gender;

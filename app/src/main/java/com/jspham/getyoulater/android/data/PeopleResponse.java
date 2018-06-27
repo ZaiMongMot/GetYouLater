@@ -16,8 +16,8 @@
 
 package com.jspham.getyoulater.android.data;
 
-import com.jspham.getyoulater.android.model.People;
 import com.google.gson.annotations.SerializedName;
+import com.jspham.getyoulater.android.data.model.People;
 
 import java.util.List;
 

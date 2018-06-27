@@ -1,65 +1,103 @@
 ext {
 
-  //Version
-  supportVersion = '27.0.2'
+    //Version
+    supportVersion = '27.0.2'
+    constraintLayoutVersion = '1.1.0'
 
-  retrofitVersion = '2.2.0'
-  rxAndroidVersion = '2.0.1'
-  rxJavaVersion  = '2.1.5'
+    retrofitVersion = '2.2.0'
+    rxAndroidVersion = '2.0.1'
+    rxJavaVersion = '2.1.5'
+    glideVersion = '3.6.1'
+    circleImageVersion = '1.3.0'
+    junitVersion = '4.12'
+    mockitoVersion = '2.8.47'
+    lombokVersion = '1.16.20'
+    butterKnifeVersion = '8.8.1'
+    calligraphyVersion = '2.3.0'
+    dagger2Version = '2.14.1'
+    lifecycleVersion = '1.1.1'
+    roomDatabaseVersion = '1.0.0'
+    firebaseCoreVersion = '16.0.1'
+    firebaseAuthVersion = '16.0.2'
+    crashlyticsVersion = '2.9.3'
+    //Packages
+    supportPackage = 'com.android.support'
+    constraintLayoutPackage = 'com.android.support.constraint'
+    retrofitPackage = 'com.squareup.retrofit2'
+    reactivePackage = 'io.reactivex.rxjava2'
+    glidePackage = 'com.github.bumptech.glide'
+    hdodenhofPackage = 'de.hdodenhof'
+    junitPackage = 'junit'
+    mockitoPackage = 'org.mockito'
+    lombokPackage = 'org.projectlombok'
+    butterknifePackage = 'com.jakewharton'
+    calligraphyPackage = 'uk.co.chrisjenx'
+    dagger2Package = 'com.google.dagger'
+    lifecyclePackage = 'android.arch.lifecycle'
+    roomPersistencePackage = 'android.arch.persistence.room'
+    firebasePackage = 'com.google.firebase'
+    crashlyticsPackage = 'com.crashlytics.sdk.android'
 
-  glideVersion = '3.6.1'
-  circleImageVersion = '1.3.0'
+    firebase = [
+            core: buildDependency(firebasePackage, 'firebase-core', firebaseCoreVersion),
+            authentication  : buildDependency(firebasePackage, 'firebase-auth', firebaseAuthVersion)
+    ]
+    // dependency injection
+    lifecycle = [
+            extensions: buildDependency(lifecyclePackage, 'extensions', lifecycleVersion),
+            compiler  : buildDependency(lifecyclePackage, 'compiler', lifecycleVersion),
+            commonrxjava8  :  buildDependency(lifecyclePackage, 'common-java8', lifecycleVersion)
+    ]
+    roomDatabase = [
+            rxjava2: buildDependency(roomPersistencePackage, 'rxjava2', roomDatabaseVersion),
+            compiler  : buildDependency(roomPersistencePackage, 'compiler', roomDatabaseVersion)
+    ]
 
-  junitVersion = '4.12'
-  mockitoVersion = '2.8.47'
+    dagger2 = [
+            dagger                : buildDependency(dagger2Package, 'dagger', dagger2Version),
+            daggerAndroidSupport  : buildDependency(dagger2Package, 'dagger-android-support', dagger2Version),
+            daggerCompiler        : buildDependency(dagger2Package, 'dagger-compiler', dagger2Version),
+            daggerAndroidProcessor: buildDependency(dagger2Package, 'dagger-android-processor', dagger2Version)
+    ]
 
-  //Packages
-  supportPackage = 'com.android.support'
-  retrofitPackage = 'com.squareup.retrofit2'
+    supportDependencies = [
 
-  reactivePackage = 'io.reactivex.rxjava2'
+            design          : buildDependency(supportPackage, 'design', supportVersion),
+            recyclerView    : buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+            cardView        : buildDependency(supportPackage, 'cardview-v7', supportVersion),
+            appCompat       : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            constraintLayout: buildDependency(constraintLayoutPackage, 'constraint-layout', constraintLayoutVersion)
+    ]
 
-  glidePackage = 'com.github.bumptech.glide'
-  hdodenhofPackage = 'de.hdodenhof'
+    retrofitDependencies = [
 
+            retrofit     : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
+            gson         : buildDependency(retrofitPackage, 'converter-gson', retrofitVersion),
+            rxAdapterJava: buildDependency(retrofitPackage, 'adapter-rxjava2', retrofitVersion)
+    ]
 
-  junitPackage = 'junit'
-  mockitoPackage = 'org.mockito'
+    rxDependencies = [
 
-  supportDependencies = [
+            rxAndroid: buildDependency(reactivePackage, 'rxandroid', rxAndroidVersion),
+            rxJava   : buildDependency(reactivePackage, 'rxjava', rxJavaVersion)
+    ]
 
-      design           : buildDependency(supportPackage, 'design', supportVersion),
-      recyclerView     : buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
-      cardView         : buildDependency(supportPackage, 'cardview-v7', supportVersion),
-      appCompat        : buildDependency(supportPackage, 'appcompat-v7', supportVersion)
-  ]
+    glide = buildDependency(glidePackage, 'glide', glideVersion)
+    lombok = buildDependency(lombokPackage, 'lombok', lombokVersion)
+    circleImageView = buildDependency(hdodenhofPackage, 'circleimageview', circleImageVersion)
+    butterKnife = buildDependency(butterknifePackage, 'butterknife', butterKnifeVersion)
+    butterKnifeCompiler = buildDependency(butterknifePackage, 'butterknife-compiler', butterKnifeVersion)
+    calligraphy = buildDependency(calligraphyPackage, 'calligraphy', calligraphyVersion)
+    crashlytics = buildDependency(crashlyticsPackage, 'crashlytics', crashlyticsVersion)
 
-  retrofitDependencies = [
+    testingDependencies = [
 
-      retrofit     : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
-      gson         : buildDependency(retrofitPackage, 'converter-gson', retrofitVersion),
-      rxAdapterJava: buildDependency(retrofitPackage, 'adapter-rxjava2', retrofitVersion)
-  ]
+            junit  : buildDependency(junitPackage, 'junit', junitVersion),
+            mockito: buildDependency(mockitoPackage, 'mockito-core', mockitoVersion)
 
-  rxDependencies = [
-
-      rxAndroid: buildDependency(reactivePackage, 'rxandroid', rxAndroidVersion),
-      rxJava   : buildDependency(reactivePackage,'rxjava',rxJavaVersion)
-  ]
-
-
-  glide = buildDependency(glidePackage, 'glide', glideVersion)
-  circleImageView = buildDependency(hdodenhofPackage, 'circleimageview', circleImageVersion)
-
-
-  testingDependencies = [
-
-      junit      : buildDependency(junitPackage, 'junit', junitVersion),
-      mockito    : buildDependency(mockitoPackage, 'mockito-core', mockitoVersion)
-
-  ]
+    ]
 }
 
 static String buildDependency(String pack, String dependency, String version) {
-  return "${pack}:${dependency}:${version}"
+    return "${pack}:${dependency}:${version}"
 }

@@ -13,12 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jspham.getyoulater.android.model;
+
+package com.jspham.getyoulater.android.data.model;
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
-public class Login implements Serializable {
+import lombok.Getter;
+import lombok.Setter;
 
-  @SerializedName("username") public String userName;
+//@Entity(tableName = "tbl_picture")
+public class Picture implements Serializable {
+    @Setter
+    @Getter
+    @ColumnInfo(name = "large")
+    @SerializedName("large")
+    public String large;
+    @Setter
+    @Getter
+    @SerializedName("medium")
+    @ColumnInfo(name = "medium")
+    public String medium;
+    @Setter
+    @Getter
+    @ColumnInfo(name = "thumbnail")
+    @SerializedName("thumbnail")
+    public String thumbnail;
 }

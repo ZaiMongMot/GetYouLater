@@ -6,5 +6,17 @@
         android:icon="@drawable/ic_action_github"
         android:orderInCategory="1"
         android:title="@string/action_github"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_contact"
+        android:icon="@drawable/ic_action_contact"
+        android:orderInCategory="2"
+        android:title="@string/action_contact"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_friends"
+        android:icon="@drawable/ic_action_name"
+        android:orderInCategory="3"
+        android:title="@string/action_friend"
         app:showAsAction="always"/>
 </menu>

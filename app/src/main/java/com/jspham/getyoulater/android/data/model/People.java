@@ -14,39 +14,61 @@
  * limitations under the License.
  */
 
-package com.jspham.getyoulater.android.model;
-
-import com.google.gson.annotations.SerializedName;
+package com.jspham.getyoulater.android.data.model;
 
 import java.io.Serializable;
 
+import com.google.gson.annotations.SerializedName;
+
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+import io.reactivex.annotations.NonNull;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity(tableName = "tbl_people")
 public class People implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    public Integer id;
 
     @SerializedName("gender")
     public String gender;
 
+    @Embedded
     @SerializedName("name")
     public Name name;
 
+    @Embedded
     @SerializedName("location")
     public Location location;
-
+    @Setter
+    @Getter
     @SerializedName("email")
     public String mail;
 
+    @Embedded
     @SerializedName("login")
     public Login userName;
-
+    @Setter
+    @Getter
     @SerializedName("phone")
     public String phone;
 
     @SerializedName("cell")
     public String cell;
 
+    @Embedded
     @SerializedName("picture")
     public Picture picture;
 
     public String fullName;
+
+    public People() {
+    }
 
     public boolean hasEmail() {
         return mail != null && !mail.isEmpty();

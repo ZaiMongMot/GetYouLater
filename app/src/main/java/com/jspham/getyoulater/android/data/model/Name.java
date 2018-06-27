@@ -14,19 +14,34 @@
  * limitations under the License.
  */
 
-package com.jspham.getyoulater.android.model;
+package com.jspham.getyoulater.android.data.model;
+
+import android.arch.persistence.room.Entity;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Location implements Serializable {
+import lombok.Getter;
+import lombok.Setter;
+//@Entity(tableName = "tbl_name")
+public class Name implements Serializable {
 
-  @SerializedName("street") public String street;
+    @Setter
+    @Getter
+    @SerializedName("title")
+    public String title;
 
-  @SerializedName("city") public String city;
+    @Setter
+    @Getter
+    @SerializedName("first")
+    public String firts;
 
-  @SerializedName("state") public String state;
+    @Setter
+    @Getter
+    @SerializedName("last")
+    public String last;
 
-  @SerializedName("zip") public String zip;
+    public Name() {
+    }
 }

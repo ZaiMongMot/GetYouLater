@@ -16,19 +16,33 @@
 
 package com.jspham.getyoulater.android;
 
+import javax.inject.Inject;
+
+import com.crashlytics.android.Crashlytics;
+import com.jspham.getyoulater.android.data.PeopleFactory;
+import com.jspham.getyoulater.android.data.PeopleService;
+import com.jspham.getyoulater.android.di.component.DaggerAppComponent;
+
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import com.jspham.getyoulater.android.data.PeopleFactory;
-import com.jspham.getyoulater.android.data.PeopleService;
-
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
+import io.fabric.sdk.android.Fabric;
 import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class PeopleApplication extends Application {
+public class PeopleApplication extends Application implements HasActivityInjector {
 
+    @Inject
+    DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
     private PeopleService peopleService;
     private Scheduler scheduler;
+    @Inject
+    CalligraphyConfig mCalligraphyConfig;
 
     private static PeopleApplication get(Context context) {
         return (PeopleApplication) context.getApplicationContext();
@@ -36,6 +50,14 @@ public class PeopleApplication extends Application {
 
     public static PeopleApplication create(Context context) {
         return PeopleApplication.get(context);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        DaggerAppComponent.builder().application(PeopleApplication.this).build().inject(this);
+        Fabric.with(this, new Crashlytics());
+        CalligraphyConfig.initDefault(mCalligraphyConfig);
     }
 
     public PeopleService getPeopleService() {
@@ -60,5 +82,10 @@ public class PeopleApplication extends Application {
 
     public void setScheduler(Scheduler scheduler) {
         this.scheduler = scheduler;
+    }
+
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return activityDispatchingAndroidInjector;
     }
 }

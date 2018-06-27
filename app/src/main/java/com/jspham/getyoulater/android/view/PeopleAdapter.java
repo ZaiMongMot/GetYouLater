@@ -16,18 +16,19 @@
 
 package com.jspham.getyoulater.android.view;
 
+import java.util.Collections;
+import java.util.List;
+
+import com.jspham.getyoulater.android.R;
+import com.jspham.getyoulater.android.data.model.People;
+import com.jspham.getyoulater.android.databinding.ItemPeopleBinding;
+import com.jspham.getyoulater.android.viewmodel.ItemPeopleViewModel;
+
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-
-import com.jspham.getyoulater.android.R;
-import com.jspham.getyoulater.android.databinding.ItemPeopleBinding;
-import com.jspham.getyoulater.android.model.People;
-import com.jspham.getyoulater.android.viewmodel.ItemPeopleViewModel;
-
-import java.util.Collections;
-import java.util.List;
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleAdapterViewHolder> {
 
@@ -62,7 +63,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleAdap
         ItemPeopleBinding mItemPeopleBinding;
 
         public PeopleAdapterViewHolder(ItemPeopleBinding itemPeopleBinding) {
-            super(itemPeopleBinding.itemPeople);
+            super(itemPeopleBinding.getRoot());
             this.mItemPeopleBinding = itemPeopleBinding;
         }
 

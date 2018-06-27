@@ -16,29 +16,26 @@
 
 package com.jspham.getyoulater.android.view;
 
+import com.jspham.getyoulater.android.data.model.People;
 import android.content.Context;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-
 import com.jspham.getyoulater.android.R;
-import com.jspham.getyoulater.android.databinding.PeopleDetailActivityBinding;
-import com.jspham.getyoulater.android.model.People;
-import com.jspham.getyoulater.android.viewmodel.PeopleDetailViewModel;
 
 public class PeopleDetailActivity extends AppCompatActivity {
 
     private static final String EXTRA_PEOPLE = "EXTRA_PEOPLE";
 
-    private PeopleDetailActivityBinding peopleDetailActivityBinding;
+    //    private PeopleDetailActivityBinding peopleDetailActivityBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        peopleDetailActivityBinding = DataBindingUtil.setContentView(this, R.layout.people_detail_activity);
-        setSupportActionBar(peopleDetailActivityBinding.toolbar);
+        //        peopleDetailActivityBinding = DataBindingUtil.setContentView(this, R.layout.people_detail_activity);
+        setContentView(R.layout.people_detail_activity);
+        //        setSupportActionBar(peopleDetailActivityBinding.toolbar);
         displayHomeAsUpEnabled();
         getExtrasFromIntent();
     }
@@ -58,8 +55,8 @@ public class PeopleDetailActivity extends AppCompatActivity {
 
     private void getExtrasFromIntent() {
         People people = (People) getIntent().getSerializableExtra(EXTRA_PEOPLE);
-        PeopleDetailViewModel peopleDetailViewModel = new PeopleDetailViewModel(people);
-        peopleDetailActivityBinding.setPeopleDetailViewModel(peopleDetailViewModel);
-        setTitle(people.name.title + "." + people.name.firts + " " + people.name.last);
+        //        PeopleDetailViewModel peopleDetailViewModel = new PeopleDetailViewModel(people);
+        //        peopleDetailActivityBinding.setPeopleDetailViewModel(peopleDetailViewModel);
+        //        setTitle(people.name.title + "." + people.name.firts + " " + people.name.last);
     }
 }

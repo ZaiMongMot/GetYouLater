@@ -19,11 +19,13 @@ package com.jspham.getyoulater.android.viewmodel;
 import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.BindingAdapter;
+import android.support.annotation.LayoutRes;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.jspham.getyoulater.android.model.People;
+import com.jspham.getyoulater.android.R;
+import com.jspham.getyoulater.android.data.model.People;
 import com.jspham.getyoulater.android.view.PeopleDetailActivity;
 
 public class ItemPeopleViewModel extends BaseObservable {
@@ -50,7 +52,8 @@ public class ItemPeopleViewModel extends BaseObservable {
     }
 
     public String getPictureProfile() {
-        return people.picture.medium;
+        return "https://randomuser.me/api/portraits/med/men/31.jpg";
+//        return people.picture.medium != null ? people.picture.medium : "";
     }
 
     @BindingAdapter("imageUrl")

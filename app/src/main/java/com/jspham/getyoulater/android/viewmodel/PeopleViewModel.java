@@ -9,24 +9,26 @@
 
 package com.jspham.getyoulater.android.viewmodel;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+
+import com.jspham.getyoulater.android.PeopleApplication;
+import com.jspham.getyoulater.android.R;
+import com.jspham.getyoulater.android.data.PeopleFactory;
+import com.jspham.getyoulater.android.data.PeopleService;
+import com.jspham.getyoulater.android.data.model.People;
+
 import android.content.Context;
 import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.support.annotation.NonNull;
 import android.view.View;
-import com.jspham.getyoulater.android.PeopleApplication;
-import com.jspham.getyoulater.android.R;
-import com.jspham.getyoulater.android.data.PeopleFactory;
-import com.jspham.getyoulater.android.data.PeopleResponse;
-import com.jspham.getyoulater.android.data.PeopleService;
-import com.jspham.getyoulater.android.model.People;
+
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
 
 public class PeopleViewModel extends Observable {
 
@@ -60,35 +62,37 @@ public class PeopleViewModel extends Observable {
         peopleRecycler.set(View.GONE);
         peopleProgress.set(View.VISIBLE);
     }
+    //It is "public" to show an example of test
+    public void showRecyclerViews() {
+        peopleProgress.set(View.GONE);
+        peopleLabel.set(View.GONE);
+        peopleRecycler.set(View.VISIBLE);
+    }
 
     public void fetchPeopleList() {
 
         PeopleApplication peopleApplication = PeopleApplication.create(context);
         PeopleService peopleService = peopleApplication.getPeopleService();
 
-        Disposable disposable = peopleService.fetchPeople(PeopleFactory.RANDOM_USER_URL).subscribeOn(peopleApplication.subscribeScheduler())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<PeopleResponse>() {
-                    @Override
-                    public void accept(PeopleResponse peopleResponse) throws Exception {
-                        changePeopleDataSet(peopleResponse.getPeopleList());
-                        peopleProgress.set(View.GONE);
-                        peopleLabel.set(View.GONE);
-                        peopleRecycler.set(View.VISIBLE);
-                    }
-                }, new Consumer<Throwable>() {
-                    @Override
-                    public void accept(Throwable throwable) throws Exception {
-                        messageLabel.set(context.getString(R.string.error_loading_people));
-                        peopleProgress.set(View.GONE);
-                        peopleLabel.set(View.VISIBLE);
-                        peopleRecycler.set(View.GONE);
-                    }
+        Disposable disposable = peopleService.fetchPeople(PeopleFactory.RANDOM_USER_URL)
+                .subscribeOn(peopleApplication.subscribeScheduler())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(peopleResponse -> {
+                    changePeopleDataSet(peopleResponse.getPeopleList());
+                    peopleProgress.set(View.GONE);
+                    peopleLabel.set(View.GONE);
+                    peopleRecycler.set(View.VISIBLE);
+                }, error -> {
+                    messageLabel.set(context.getString(R.string.error_loading_people));
+                    peopleProgress.set(View.GONE);
+                    peopleLabel.set(View.VISIBLE);
+                    peopleRecycler.set(View.GONE);
                 });
 
         compositeDisposable.add(disposable);
     }
 
-    private void changePeopleDataSet(List<People> peoples) {
+    public void changePeopleDataSet(List<People> peoples) {
         peopleList.addAll(peoples);
         setChanged();
         notifyObservers();
@@ -109,4 +113,5 @@ public class PeopleViewModel extends Observable {
         compositeDisposable = null;
         context = null;
     }
+
 }
