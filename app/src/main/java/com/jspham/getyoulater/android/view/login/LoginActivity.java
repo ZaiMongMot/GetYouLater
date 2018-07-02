@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,6 +29,13 @@ public class LoginActivity extends AppCompatActivity {
     EditText email;
     @BindView(R.id.password)
     EditText password;
+
+
+    @BindView(R.id.email) EditText mEmailView;
+    @BindView(R.id.password) EditText mPasswordView;
+    @BindView(R.id.login_progress)
+    View mProgressView;
+    @BindView(R.id.login_form) View mLoginFormView;
 
     @OnClick(R.id.email_sign_in_button)
     public void onSignInButtonClicked(){
