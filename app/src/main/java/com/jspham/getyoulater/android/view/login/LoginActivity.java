@@ -25,12 +25,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mFirebaseAuth;
 
-    @BindView(R.id.email)
-    EditText email;
-    @BindView(R.id.password)
-    EditText password;
-
-
     @BindView(R.id.email) EditText mEmailView;
     @BindView(R.id.password) EditText mPasswordView;
     @BindView(R.id.login_progress)
@@ -39,8 +33,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.email_sign_in_button)
     public void onSignInButtonClicked(){
-        Toast.makeText(LoginActivity.this, "Sign In Clicked!", Toast.LENGTH_SHORT).show();
-        mFirebaseAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+        mFirebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(LoginActivity.this, task -> {
                     if (mFirebaseAuth.getCurrentUser() != null){
                         Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();
@@ -57,6 +52,5 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         mFirebaseAuth = FirebaseAuth.getInstance();
-
     }
 }

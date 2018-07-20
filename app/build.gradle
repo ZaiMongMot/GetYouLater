@@ -70,7 +70,7 @@ dependencies {
     implementation lifecycle.commonrxjava8
 //    annotationProcessor lifecycle.compiler
     implementation roomDatabase.rxjava2
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    //implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     annotationProcessor roomDatabase.compiler
     implementation dagger2.dagger
     implementation dagger2.daggerAndroidSupport

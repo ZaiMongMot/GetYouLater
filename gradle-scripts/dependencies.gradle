@@ -19,7 +19,7 @@ ext {
     roomDatabaseVersion = '1.0.0'
     firebaseCoreVersion = '16.0.1'
     firebaseAuthVersion = '16.0.2'
-    crashlyticsVersion = '2.9.3'
+    crashlyticsVersion = '2.9.4'
     //Packages
     supportPackage = 'com.android.support'
     constraintLayoutPackage = 'com.android.support.constraint'
